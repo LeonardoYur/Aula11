@@ -1,17 +1,16 @@
 <?php
-session_start();
-$_SESSION["newsession"] = $value;
+include("conexao.php");
+
 
 $codigoSQL = "SELECT * FROM tblMedicos WHERE usuario LIKE :us AND senha LIKE :se";
 $comando = $conexao->prepare($codigoSQL);
-$resultado = $comando->execute(array('us' => $_GET['usu'], 'se' => $_GET['se']));
+$comando->execute(array('us' => $_GET['usu'], 'se' => $_GET['se']));
+$rowCount = $comando->rowCount();
 
-if ($resultado->rowCount() > 0) {
 
+if ($rowCount < 1) {
+    header("location: login.php"); 
 }
-
-Checar se o usuario existe na tabela, usar fetch()
-
 
 
 ?>

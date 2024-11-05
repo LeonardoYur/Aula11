@@ -11,10 +11,10 @@
           <a class="nav-link" aria-current="page" href="formularioPaciente.php">Cadastrar paciente</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($_SESSION["funcao"] != "1"){echo "disabled";}?>" aria-current="page" href="formularioPaciente.php">Criar receita</a>
+          <a class="nav-link <?php if($_SESSION["funcao"] != "1"){echo "disabled";}?>" aria-current="page" href="">Criar receita</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($_SESSION["funcao"] != "2"){echo "disabled";}?>" aria-current="page" href="formularioPaciente.php">Administrar receita</a>
+          <a class="nav-link <?php if($_SESSION["funcao"] != "2"){echo "disabled";}?>" aria-current="page" href="">Administrar receita</a>
         </li>
     </div>
   </div>
