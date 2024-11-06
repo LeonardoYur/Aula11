@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,14 +13,14 @@ session_start();
 <body>
     <?php include("navbar.php");?>
     <div class="container-sm">
-        <form action="formularioPaciente.php" method="get">
+        <form action="verifica.php" method="get">
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Insira o usuário:</label>
                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Usuário" name="usu">
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Insira a senha:</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name="se">
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name="se">
             </div>
             <div class="mb-3">
                 <label for="inputState" class="form-label">Função:</label>
@@ -31,6 +28,7 @@ session_start();
                     <option disabled selected>Sua função</option>
                     <option value="1">Médico</option>
                     <option value="2">Enfermeiro</option>
+                    <option value="3">Administrador</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -45,15 +43,3 @@ session_start();
 </body>
 
 </html>
-
-<?php
-
-if(isset($_GET["fun"])) {
-$funcao = $_GET["fun"];
-}
-
-if(isset($_SESSION["funcao"])){
-$_SESSION["funcao"] = $funcao;
-}
-
-?>

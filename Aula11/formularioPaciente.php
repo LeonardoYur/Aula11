@@ -1,18 +1,7 @@
 <?php
-include("conexao.php");
-
-
-$codigoSQL = "SELECT * FROM tblMedicos WHERE usuario LIKE :us AND senha LIKE :se";
-$comando = $conexao->prepare($codigoSQL);
-$comando->execute(array('us' => $_GET['usu'], 'se' => $_GET['se']));
-$rowCount = $comando->rowCount();
-
-
-if ($rowCount < 1) {
-    header("location: login.php"); 
+if (isset($_GET["fun"])) {
+    $_SESSION["funcao"] = $_GET["fun"];
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +17,6 @@ if ($rowCount < 1) {
 
 <body>
     <?php include("navbar2.php"); ?>
-
     <div class="container-sm">
         <form action="cadastrarPacientes.php" method="get">
             <div class="mb-3">

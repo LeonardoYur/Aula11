@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php include("navbar.php");?>
+<?php include("navbar2.php");?>
 
     <div class="container-sm">
         <form action="cadastrarEnfermeiros.php" method="get">

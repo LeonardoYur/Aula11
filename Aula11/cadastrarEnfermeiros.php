@@ -16,9 +16,7 @@ try {
     $resultado = $comando->execute(array('nm' => $_GET['nome'], 'crm' => $_GET['crm'], 'us' => $_GET['usu'], 'se' => $_GET['se'] ));
 
     if($resultado) {
-	echo "Comando executado!<br>";
-    } else {
-	echo "Erro ao executar o comando!<br>";
+        header("location: formularioEnfermeiros.php");
     }
 } catch (Exception $e) {
     echo "Erro $e";
